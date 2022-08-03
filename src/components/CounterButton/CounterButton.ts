@@ -23,22 +23,24 @@ export class CounterButton extends LitElement {
   @property({ type: String })
   size: ButtonSize = ButtonSize.Small;
 
+  @property({ type: Boolean, reflect: true })
+  highlight = false;
+
   @state()
   private _count = 0;
 
   render() {
     const className = `button--${this.type} button--${this.size}`;
     return html`
-      <div class="card">
-        <button class=${className} @click=${this._onClick} part="button">
-          count is ${this._count}
-        </button>
-      </div>
+      <button class=${className} @click=${this._onClick} part="button">
+        count is ${this._count}
+      </button>
     `;
   }
 
   private _onClick() {
     this._count++;
+    this.highlight = this.highlight || this._count >= 10;
   }
 }
 

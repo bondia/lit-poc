@@ -12,17 +12,25 @@ export default {
     size: {
       control: { type: 'select' },
       options: Object.values(ButtonSize)
+    },
+    highlight: {
+      control: { type: 'boolean' }
     }
   }
 } as Meta;
 
 const Template: Story<Partial<CounterButton>> = (args) => {
-  const { type, size } = args;
-  return html`<counter-button type=${type} size=${size}></counter-button>`;
+  const { type, size, highlight } = args;
+  return html`<counter-button
+    type=${type}
+    size=${size}
+    ?highlight=${highlight}
+  ></counter-button>`;
 };
 
 export const CounterButtonDefault = Template.bind({});
 CounterButtonDefault.args = {
   type: ButtonType.Primary,
-  size: ButtonSize.Medium
+  size: ButtonSize.Medium,
+  highlight: false
 };

@@ -1,8 +1,12 @@
 import { css } from 'lit';
 
 export default css`
-  .card {
+  :host {
     padding: 2em;
+  }
+
+  :host([highlight]) button {
+    border: 4px solid yellow;
   }
 
   button {
@@ -18,11 +22,13 @@ export default css`
   .button--primary {
     color: white;
     background-color: #1ea7fd;
+    border: 4px solid #1ea7fd;
   }
 
   .button--secondary {
     color: #333;
     background-color: transparent;
+    border: 4px solid transparent;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   }
 
