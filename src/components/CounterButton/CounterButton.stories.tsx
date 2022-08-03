@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { ButtonSize, ButtonType, CounterButton } from './CounterButton';
-
 export default {
   title: 'Lit/Counter Button',
   argTypes: {
@@ -22,8 +22,8 @@ export default {
 const Template: Story<Partial<CounterButton>> = (args) => {
   const { type, size, highlight } = args;
   return html`<counter-button
-    type=${type}
-    size=${size}
+    type=${ifDefined(type)}
+    size=${ifDefined(size)}
     ?highlight=${highlight}
   ></counter-button>`;
 };

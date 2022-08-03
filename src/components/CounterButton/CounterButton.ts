@@ -62,6 +62,6 @@ export class CounterButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    counter: CounterButton;
+    'counter-button': CounterButton;
   }
 }
