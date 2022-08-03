@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import ContentButtonStyles from './ContentButtonStyles';
 
@@ -28,6 +28,22 @@ export class CounterButton extends LitElement {
 
   @state()
   private _count = 0;
+
+  willUpdate(props: PropertyValues<this>) {
+    console.info('willUpdate', {
+      type: props.get('type'),
+      size: props.get('size'),
+      highlight: props.get('highlight')
+    });
+  }
+
+  updated(props: PropertyValues<this>) {
+    console.info('updated', {
+      type: props.get('type'),
+      size: props.get('size'),
+      highlight: props.get('highlight')
+    });
+  }
 
   render() {
     const className = `button--${this.type} button--${this.size}`;
