@@ -1,5 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 import ContentButtonStyles from './ContentButtonStyles';
 
 export enum ButtonType {
@@ -46,9 +47,12 @@ export class CounterButton extends LitElement {
   }
 
   render() {
-    const className = `button--${this.type} button--${this.size}`;
+    const classes = {
+      [`button--${this.type}`]: true,
+      [`button--${this.size}`]: true
+    };
     return html`
-      <button class=${className} @click=${this._onClick} part="button">
+      <button class=${classMap(classes)} @click=${this._onClick} part="button">
         count is ${this._count}
       </button>
     `;
