@@ -47,12 +47,12 @@ export class CounterButton extends LitElement {
   }
 
   render() {
-    const classes = {
+    const classes = classMap({
       [`button--${this.type}`]: true,
       [`button--${this.size}`]: true
-    };
+    });
     return html`
-      <button class=${classMap(classes)} @click=${this._onClick} part="button">
+      <button class=${classes} @click=${this._onClick} part="button">
         count is ${this._count}
       </button>
     `;

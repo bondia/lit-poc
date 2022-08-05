@@ -3,6 +3,7 @@ import { css } from 'lit';
 export default css`
   :host {
     padding: 2em;
+    display: block;
   }
 
   :host([highlight]) button {
