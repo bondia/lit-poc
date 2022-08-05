@@ -13,13 +13,13 @@ const maxWidthMap: { [key: string]: number } = {
   xl: 1200
 };
 
-const withMaxWidth = (breakpoint: Breakpoint, styles: string): string => {
+const withMediaQuery = (breakpoint: Breakpoint, styles: string): string => {
   const maxWidth: number | undefined = maxWidthMap[breakpoint];
   if (maxWidth) {
     return `
-    @media (min-width: ${maxWidth - 1}px) {
-      ${styles}
-    }
+  @media (min-width: ${maxWidth - 1}px) {
+    ${styles}
+  }
     `;
   }
   return styles;
@@ -40,7 +40,8 @@ const buildBreakpointRules = (breakpoint: Breakpoint): string =>
 const createRules = (): string =>
   (Object.keys(Breakpoint) as Breakpoint[]).reduce(
     (accumulation, breakpoint) =>
-      accumulation + withMaxWidth(breakpoint, buildBreakpointRules(breakpoint)),
+      accumulation +
+      withMediaQuery(breakpoint, buildBreakpointRules(breakpoint)),
     ''
   );
 
