@@ -11,6 +11,19 @@
   <body>
     <wd-grid>
       <wd-container>
+        <wd-column xs="12">
+          <h1>Vite + Lit</h1>
+        </wd-column>
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
+          <counter-button type="primary" size="large"></counter-button>
+        </wd-column>
+        <wd-column xs="12" sm="6" md="7" lg="6" xl="5">
+          <slots-example></slots-example>
+        </wd-column>
+      </wd-container>
+      <br />
+      <br />
+      <wd-container>
         <wd-column xs="12" sm="6" md="3" lg="2" xl="1"><div>1</div></wd-column>
         <wd-column xs="6" sm="6" md="3" lg="2" xl="1"><div>2</div></wd-column>
         <wd-column xs="12" sm="6" md="3" lg="2" xl="1"><div>3</div></wd-column>
@@ -28,21 +41,6 @@
         </wd-column>
         <wd-column xs="3" sm="6" md="3" lg="2" xl="1">
           <div>12</div>
-        </wd-column>
-      </wd-container>
-
-      <br />
-      <br />
-
-      <wd-container>
-        <wd-column xs="12" sm="6" md="3" lg="2" xl="3">
-          <h1>Vite + Lit</h1>
-        </wd-column>
-        <wd-column xs="12" sm="6" md="3" lg="2" xl="2">
-          <counter-button type="primary" size="large"></counter-button>
-        </wd-column>
-        <wd-column xs="12" sm="6" md="3" lg="2" xl="3">
-          <slots-example></slots-example>
         </wd-column>
       </wd-container>
     </wd-grid>
