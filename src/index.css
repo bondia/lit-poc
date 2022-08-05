@@ -31,6 +31,10 @@ body {
   min-height: 100vh;
 }
 
+wd-column > div {
+  text-align: center;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
