@@ -1,14 +1,29 @@
 wd-grid {
-  max-width: 1200px;
-  margin: auto;
+  // Grid custom vars
+  --grid-color: #eeeeee;
+  --grid-min-width: 320px;
+  --grid-max-width: 1200px;
+  --container-color: #4ecca3;
+  --column-color: #393e46;
+  --column-gutter: 10px;
+
   display: block;
-  background-color: #eeeeee;
+  min-width: var(--grid-min-width);
+  max-width: var(--grid-max-width);
+  margin: auto;
+  background-color: var(--grid-color);
+}
+
+wd-container {
+  display: block;
+  background-color: var(--container-color);
 }
 
 wd-column {
-  background-color: #393e46;
-  margin: 0 10px;
-  width: calc(100% / 12 - 20px);
+  display: block;
+  background-color: var(--column-color);
+  margin: 0 var(--column-gutter);
+  width: calc(100% / 12 - var(--column-gutter) * 2);
 }
 
 $breakpoints: xs, sm, md, lg, xl;
@@ -25,15 +40,14 @@ $min-width: (
   @each $column in $columns {
     @if $column > 0 {
       wd-column[#{$breakpoint}='#{$column}'] {
-        width: calc(100% / 12 * #{$column} - 20px);
+        width: calc(100% / 12 * #{$column} - var(--column-gutter) * 2);
       }
-
       wd-column[push#{$breakpoint}='#{$column}'] {
-        margin-left: calc(100% / 12 * #{$column} + 10px);
+        margin-left: calc(100% / 12 * #{$column} + var(--column-gutter));
       }
     } @else {
       wd-column[push#{$breakpoint}='#{$column}'] {
-        margin-left: 10px;
+        margin-left: var(--column-gutter);
       }
     }
   }

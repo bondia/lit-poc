@@ -34,7 +34,7 @@ export class Column extends LitElement {
   pushxl: Number = 0;
 
   render() {
-    return html` <div><slot></slot></div> `;
+    return html`<slot></slot>`;
   }
 }
 

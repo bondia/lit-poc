@@ -5,7 +5,6 @@ export default css`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: #4ecca3;
-    margin: 0 -10px;
+    margin: 0 calc(var(--column-gutter) * -1);
   }
 `;

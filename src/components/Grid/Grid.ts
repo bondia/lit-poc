@@ -5,7 +5,7 @@ import './Grid.scss';
 @customElement('wd-grid')
 export class Grid extends LitElement {
   render() {
-    return html`<div class="grid"><slot></slot></div> `;
+    return html`<slot></slot>`;
   }
 }
 
