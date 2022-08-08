@@ -1,11 +1,9 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import GridStyles from './GridStyles';
+import './Grid.scss';
 
 @customElement('wd-grid')
 export class Grid extends LitElement {
-  static styles = GridStyles;
-
   render() {
     return html`<div class="grid"><slot></slot></div> `;
   }

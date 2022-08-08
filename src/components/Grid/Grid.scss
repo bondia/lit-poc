@@ -1,0 +1,53 @@
+wd-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: block;
+  background-color: #eeeeee;
+}
+
+wd-column {
+  background-color: #393e46;
+  margin: 0 10px;
+  width: calc(100% / 12 - 20px);
+}
+
+$breakpoints: xs, sm, md, lg, xl;
+$columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$min-width: (
+  xs: 0,
+  sm: 675,
+  md: 850,
+  lg: 975,
+  xl: 1200
+);
+
+@mixin breakpointRules($breakpoint) {
+  @each $column in $columns {
+    @if $column > 0 {
+      wd-column[#{$breakpoint}='#{$column}'] {
+        width: calc(100% / 12 * #{$column} - 20px);
+      }
+
+      wd-column[push#{$breakpoint}='#{$column}'] {
+        margin-left: calc(100% / 12 * #{$column} + 10px);
+      }
+    } @else {
+      wd-column[push#{$breakpoint}='#{$column}'] {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@each $breakpoint in $breakpoints {
+  $breakpoint-min-width: map-get($min-width, $breakpoint);
+  $query-width: $breakpoint-min-width - 1px;
+
+  @if $breakpoint == xs {
+    @include breakpointRules($breakpoint);
+  } @else {
+    @media (min-width: $query-width) {
+      @include breakpointRules($breakpoint);
+    }
+  }
+}

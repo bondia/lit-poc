@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import ColumnStyles from './ColumnStyles';
 
 @customElement('wd-column')
 export class Column extends LitElement {
@@ -35,12 +34,7 @@ export class Column extends LitElement {
   pushxl: Number = 0;
 
   render() {
-    return html`
-      <style>
-        ${ColumnStyles}
-      </style>
-      <div><slot></slot></div>
-    `;
+    return html` <div><slot></slot></div> `;
   }
 }
 
