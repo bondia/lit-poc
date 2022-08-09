@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import './Grid.scss';
 
 @customElement('wd-grid')
 export class Grid extends LitElement {

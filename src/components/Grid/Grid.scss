@@ -15,15 +15,18 @@ wd-grid {
 }
 
 wd-container {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--column-gutter) * -1);
   background-color: var(--container-color);
 }
 
 wd-column {
   display: block;
-  background-color: var(--column-color);
-  margin: 0 var(--column-gutter);
   width: calc(100% / 12 - var(--column-gutter) * 2);
+  margin: 0 var(--column-gutter);
+  background-color: var(--column-color);
 }
 
 $breakpoints: xs, sm, md, lg, xl;
