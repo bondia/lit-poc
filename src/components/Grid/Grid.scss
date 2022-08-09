@@ -10,6 +10,7 @@ wd-grid {
   display: block;
   min-width: var(--grid-min-width);
   max-width: var(--grid-max-width);
+  overflow-y: hidden;
   margin: auto;
   background-color: var(--grid-color);
 }
