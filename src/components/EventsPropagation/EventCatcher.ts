@@ -29,9 +29,6 @@ export class EventCatcher extends LitElement {
 
       <p>Propagated Count: ${this._count}</p>
       <slot>
-        <p>
-          Wont be able to propagate because it is rendered in the shadow DOM
-        </p>
         <wd-event-trigger></wd-event-trigger>
       </slot>
     </div>`;
