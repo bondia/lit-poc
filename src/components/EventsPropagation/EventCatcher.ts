@@ -10,7 +10,7 @@ export class EventCatcher extends LitElement {
   static styles = EventCatcherStyles;
 
   @property({ type: Boolean })
-  propagate: Boolean = false;
+  propagate: boolean = false;
 
   @state()
   private _count = 0;
@@ -18,15 +18,27 @@ export class EventCatcher extends LitElement {
   render() {
     return html`<div @wunderClick=${this._wunderClickListener}>
       <h3>Catch</h3>
-      <p>Propagate: ${this.propagate}</p>
+      <label>
+        <input
+          type="checkbox"
+          ?checked=${this.propagate}
+          @click=${this._toggle}
+        />
+        Propagate
+      </label>
+
       <p>Propagated Count: ${this._count}</p>
       <slot>
-        <wd-event-trigger>
-          Rendered in the shadow DOM. It shold propagate until the shadow DOM
-          root.
-        </wd-event-trigger>
+        <p>
+          Wont be able to propagate because it is rendered in the shadow DOM
+        </p>
+        <wd-event-trigger></wd-event-trigger>
       </slot>
     </div>`;
+  }
+
+  private _toggle() {
+    this.propagate = !this.propagate;
   }
 
   private _wunderClickListener(e: CustomEvent<WunderClickEvent>) {

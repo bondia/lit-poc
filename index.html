@@ -82,30 +82,20 @@
             <li>composed: false</li>
           </ul>
         </wd-column>
-        <wd-column xs="12" sm="6" md="6" lg="3" xl="3">
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="4">
           <wd-event-catcher>
             <wd-event-trigger>Basic trigger</wd-event-trigger>
           </wd-event-catcher>
         </wd-column>
-        <wd-column xs="12" sm="6" md="6" lg="3" xl="3">
-          <wd-event-catcher>
-            <wd-event-catcher>
-              <wd-event-trigger>
-                Nested trigger preventing propagation
-              </wd-event-trigger>
-            </wd-event-catcher>
-          </wd-event-catcher>
-        </wd-column>
-        <wd-column xs="12" sm="6" md="6" lg="3" xl="3">
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="4">
           <wd-event-catcher>
             <wd-event-catcher propagate>
-              <wd-event-trigger>
-                Nested trigger that should propagate
-              </wd-event-trigger>
+              <p>Try to propagate!</p>
+              <wd-event-trigger></wd-event-trigger>
             </wd-event-catcher>
           </wd-event-catcher>
         </wd-column>
-        <wd-column xs="12" sm="6" md="6" lg="3" xl="3">
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="4">
           <wd-event-catcher>
             <wd-event-catcher propagate></wd-event-catcher>
           </wd-event-catcher>
