@@ -17,7 +17,7 @@ export class EventTrigger extends LitElement {
 
   render() {
     return html` <div @click=${this._clickEvent}>
-      <div>clicked ${this._count}</div>
+      <div>Count: ${this._count}</div>
       <slot></slot>
     </div>`;
   }

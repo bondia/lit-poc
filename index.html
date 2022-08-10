@@ -38,35 +38,8 @@
     <br />
     <wd-grid>
       <wd-container>
-        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
-          <wd-event-catcher>
-            <wd-event-trigger>Basic trigger</wd-event-trigger>
-          </wd-event-catcher>
-        </wd-column>
-        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
-          <wd-event-catcher>
-            <wd-event-catcher>
-              <wd-event-trigger>
-                Nested trigger that won't propagate
-              </wd-event-trigger>
-            </wd-event-catcher>
-          </wd-event-catcher>
-        </wd-column>
-        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
-          <wd-event-catcher>
-            <wd-event-catcher propagate>
-              <wd-event-trigger>
-                Nested trigger that will propagate
-              </wd-event-trigger>
-            </wd-event-catcher>
-          </wd-event-catcher>
-        </wd-column>
-      </wd-container>
-    </wd-grid>
-    <br />
-    <br />
-    <wd-grid>
-      <wd-container>
+        <wd-column xs="12"> <h2>Grid</h2></wd-column>
+
         <wd-column xs="12" sm="6" md="3" lg="2" xl="1"><div>1</div></wd-column>
         <wd-column xs="6" sm="6" md="3" lg="2" xl="1"><div>2</div></wd-column>
         <wd-column xs="12" sm="6" md="3" pushmd="1" lg="2" pushlg="0" xl="1">
@@ -88,6 +61,54 @@
         </wd-column>
         <wd-column xs="3" sm="6" md="3" lg="2" xl="1">
           <div>12</div>
+        </wd-column>
+      </wd-container>
+    </wd-grid>
+    <br />
+    <br />
+    <wd-grid>
+      <wd-container>
+        <wd-column xs="12">
+          <h2>Events Propagation</h2>
+          <p>
+            <a
+              href="https://lit.dev/docs/components/events/#shadowdom-composed"
+            >
+              https://lit.dev/docs/components/events/#shadowdom-composed
+            </a>
+          </p>
+          <ul>
+            <li>bubbles: true</li>
+            <li>composed: false</li>
+          </ul>
+        </wd-column>
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
+          <wd-event-catcher>
+            <wd-event-trigger>Basic trigger</wd-event-trigger>
+          </wd-event-catcher>
+        </wd-column>
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
+          <wd-event-catcher>
+            <wd-event-catcher>
+              <wd-event-trigger>
+                Nested trigger preventing propagation
+              </wd-event-trigger>
+            </wd-event-catcher>
+          </wd-event-catcher>
+        </wd-column>
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
+          <wd-event-catcher>
+            <wd-event-catcher propagate>
+              <wd-event-trigger>
+                Nested trigger that should propagate
+              </wd-event-trigger>
+            </wd-event-catcher>
+          </wd-event-catcher>
+        </wd-column>
+        <wd-column xs="12" sm="6" md="4" lg="4" xl="3">
+          <wd-event-catcher>
+            <wd-event-catcher propagate></wd-event-catcher>
+          </wd-event-catcher>
         </wd-column>
       </wd-container>
     </wd-grid>

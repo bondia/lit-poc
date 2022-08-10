@@ -18,8 +18,14 @@ export class EventCatcher extends LitElement {
   render() {
     return html`<div @wunderClick=${this._wunderClickListener}>
       <h3>Catch</h3>
-      <p>Parent Count: ${this._count}</p>
-      <slot></slot>
+      <p>Propagate: ${this.propagate}</p>
+      <p>Propagated Count: ${this._count}</p>
+      <slot>
+        <wd-event-trigger>
+          Rendered in the shadow DOM. It shold propagate until the shadow DOM
+          root.
+        </wd-event-trigger>
+      </slot>
     </div>`;
   }
 
